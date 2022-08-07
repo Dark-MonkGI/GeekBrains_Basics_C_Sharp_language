@@ -12,6 +12,9 @@ namespace LessonOne
         {
             Person person = new Person();
             person.ShowMe();
+
+            MathDistans Distans = new MathDistans();
+            Console.WriteLine($"Distance between two coordinates:  {Distans.Result}");
             Console.ReadLine();
         }
 

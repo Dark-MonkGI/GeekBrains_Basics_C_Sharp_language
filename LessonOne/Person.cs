@@ -54,7 +54,13 @@ namespace LessonOne
             Console.WriteLine(HiPerson);
             Console.WriteLine(HiPersonNext);
             Console.WriteLine(HiPersonNextTwo);
+            Console.WriteLine($"Your body mass index: {bodyMassIndex(height, weight)}");
+        }
 
+        private double bodyMassIndex(int height, int weight)
+        {
+            // I = m / (h * h); где m — масса тела в килограммах, h — рост в метрах.
+            return weight / (Convert.ToDouble(height) /100 * (Convert.ToDouble(height) / 100));
         }
     }
 }
