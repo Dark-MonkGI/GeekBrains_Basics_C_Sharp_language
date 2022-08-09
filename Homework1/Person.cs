@@ -40,7 +40,7 @@ namespace Homework1
 
 
 
-        private void  WriteData(string parameter)
+        private void WriteData(string parameter)
         {
             Console.WriteLine($"\n\rВведите {parameter}: ");
         }
@@ -60,7 +60,7 @@ namespace Homework1
         private double bodyMassIndex(int height, int weight)
         {
             // I = m / (h * h); где m — масса тела в килограммах, h — рост в метрах.
-            return weight / (Convert.ToDouble(height) /100 * (Convert.ToDouble(height) / 100));
+            return weight / (Convert.ToDouble(height) / 100 * (Convert.ToDouble(height) / 100));
         }
     }
 }

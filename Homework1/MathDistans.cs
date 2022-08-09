@@ -1,11 +1,10 @@
-﻿using Homework1.Properties;
-using System;
+﻿using System;
 
 namespace Homework1
 {
     internal class MathDistans
-    { 
-        public double Result { get ; private set; }
+    {
+        public double Result { get; private set; }
 
         Coordinates CoordOne = new Coordinates();
         private Coordinates CoordTwo = new Coordinates();
@@ -17,7 +16,7 @@ namespace Homework1
             Distans();
         }
 
-        
+
         private void Distans()
         {
             this.Result = Math.Sqrt(Math.Pow(CoordTwo.X - CoordOne.X, 2) + Math.Pow(CoordTwo.Y - CoordOne.Y, 2));
