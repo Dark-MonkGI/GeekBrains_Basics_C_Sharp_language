@@ -66,7 +66,8 @@ namespace Homework2
 
             while (number != 0)
             {
-                summ += number;
+                if(number % 2 == 1)
+                    summ += number;
                 number = ImputNumber();
             }
 
