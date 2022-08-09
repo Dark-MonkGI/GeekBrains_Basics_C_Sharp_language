@@ -1,7 +1,7 @@
-﻿using LessonOne.Properties;
+﻿using Homework1.Properties;
 using System;
 
-namespace LessonOne
+namespace Homework1
 {
     internal class MathDistans
     { 

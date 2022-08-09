@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace LessonOne.Properties
+namespace Homework1.Properties
 {
     internal class Coordinates
     {

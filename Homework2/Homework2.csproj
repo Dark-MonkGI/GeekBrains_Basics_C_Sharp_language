@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{26B07DAF-1710-44A0-9960-F5532E67DD7C}</ProjectGuid>
+    <ProjectGuid>{17699584-C323-4041-A5C1-DA3E19780802}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LessonOne</RootNamespace>
-    <AssemblyName>LessonOne</AssemblyName>
+    <RootNamespace>Homework2</RootNamespace>
+    <AssemblyName>Homework2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MathDistans.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="LoginUsers.cs" />
+    <Compile Include="MinValue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Coordinates.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SayHello\SayHello.csproj">
+      <Project>{ffbdd763-c5a8-42bf-b874-dbee2a2fd1d0}</Project>
+      <Name>SayHello</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

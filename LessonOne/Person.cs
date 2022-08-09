@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LessonOne
+namespace Homework1
 {
     internal class Person
     {

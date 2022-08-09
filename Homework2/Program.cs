@@ -5,21 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using SayHello;
 
-namespace Homework1
+namespace Homework2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Hello.Say(1);
+            Hello.Say(2);
 
-            Person person = new Person();
-            person.ShowMe();
+            Maths Value = new Maths();
+            Value.MinNumber();
+            Value.Whatlength();
 
-            MathDistans Distans = new MathDistans();
-            Console.WriteLine($"Distance between two coordinates:  {Distans.Result}");
+            Maths.SumNumbers();
+
+            LoginUsers loginUsers = new LoginUsers();
+            loginUsers.IsLogin();
+
             Console.ReadLine();
         }
-
     }
 }
