@@ -51,11 +51,29 @@ namespace Homework2
             Console.WriteLine();
         }
 
-        internal void Whatlength()
+        public void Whatlength()
         {
-            Console.WriteLine($"Length x({x}):  {Convert.ToString(x).Length} digits");
-            Console.WriteLine($"Length y({y}):  {Convert.ToString(y).Length} digits");
+            Console.WriteLine($"Length x({x}):  {Convert.ToString(GetCountOfDigitsOfNumber(x))} digits");
+            Console.WriteLine($"Length y({y}):  {Convert.ToString(GetCountOfDigitsOfNumber(y))} digits");
             Console.WriteLine($"Length n({n}):  {Convert.ToString(n).Length} digits\n\r");
+        }
+
+        /// <summary>
+        /// Подсчет кол-ва цифр числа (исходя из разрядности числа)
+        /// </summary>
+        /// <param name = "number">Число</param>
+        /// <returns>Кол-во цифр числа</returns>
+        private int GetCountOfDigitsOfNumber(int number)
+        {
+            // Если число равно 0, результат подсчета 1, завершаем работу метода
+            int count = (number == 0) ? 1 : 0;
+            
+            while (number != 0) 
+            {
+                count++; 
+                number /= 10; 
+            }
+            return count; 
         }
 
         public static void SumNumbers()
@@ -72,6 +90,51 @@ namespace Homework2
             }
 
             Console.WriteLine($"Sum of all numbers: {summ}");
+        }
+
+        /// <summary>
+        /// Подсчет количества "хороших" чисел.
+        /// </summary>
+        public static void FindingSum()
+        {
+            Console.WriteLine("Подсчет количества \"хороших\" чисел");
+            Console.WriteLine("==================================\n");
+            Console.WriteLine($"Производится подсчет количества хороших чисел.\nЭто может занять несколько минут ...");
+            DateTime start = DateTime.Now;
+            int counter = 0;
+            int sum = 0;
+
+            var maxNumber = 1_000_000_000;
+
+            for (int i = 1; i <= maxNumber; i++)
+            {
+                if (i % GetSum(i) == 0)
+                {
+                    counter++;
+                    sum += i;
+                }
+            }
+            DateTime finish = DateTime.Now;
+            Console.WriteLine($"Количество хороших чисел в диапазоне от 1 до {maxNumber} равно {counter}, сумма: {sum}");
+            Console.WriteLine($"Подсчет занял у нас {finish - start}");
+            Console.ReadKey();
+
+        }
+
+        /// <summary>
+        /// Поиск суммы своих цифр числа
+        /// </summary>
+        /// <param name="number">Заданное число</param>
+        /// <returns></returns>
+        static int GetSum(int number) 
+        {
+            var sum = 0;  
+            while (number > 0) 
+            {
+                sum += number % 10;
+                number /= 10; 
+            }
+            return sum; 
         }
     }
 }

@@ -22,6 +22,8 @@ namespace Homework2
             LoginUsers loginUsers = new LoginUsers();
             loginUsers.IsLogin();
 
+            Maths.FindingSum();
+
             Console.ReadLine();
         }
     }

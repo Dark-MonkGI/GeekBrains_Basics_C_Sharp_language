@@ -12,6 +12,20 @@ namespace Homework1
         public double X { get; set; }
         public double Y { get; set; }
 
+        private int nameVariable;
+
+        public int NameVariable 
+        { 
+            get 
+            { 
+                return NameVariable;  
+            } 
+            set
+            {
+                NameVariable = value;
+            }
+        }
+
         public Coordinates()
         {
             Thread.Sleep(100); //чтоб не генерились одинаковые числа
