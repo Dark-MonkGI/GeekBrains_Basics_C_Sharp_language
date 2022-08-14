@@ -54,13 +54,13 @@ namespace Homework3
 
         public static ComplexStruct operator +(ComplexStruct complex1, ComplexStruct complex2)
         {
-            int ss = complex1.Re + complex2.Re;// тут потестил все нормально 
+            int ss = complex1.Re + complex2.Re;// 
             int ss2 = complex1.Im + complex2.Im;
 
-            ComplexStruct complex3 = new ComplexStruct(complex1.Re + complex2.Re, complex1.Im + complex2.Im); // и тут ок
+            ComplexStruct complex3 = new ComplexStruct(complex1.Re + complex2.Re, complex1.Im + complex2.Im); // 
 
 
-            return new ComplexStruct { Re = complex1.Re + complex2.Re, Im = complex1.Im + complex2.Im }; //  а потом меняються местами почему то ... 
+            return new ComplexStruct { Re = complex1.Re + complex2.Re, Im = complex1.Im + complex2.Im }; //  
         }
 
 
@@ -70,7 +70,7 @@ namespace Homework3
 
         public static ComplexStruct operator -(ComplexStruct complex1, ComplexStruct complex2)
         {
-            return new ComplexStruct { Re = complex1.re - complex2.re, Im = complex1.im - complex2.im }; // Почему я могу обратиться к самими переменным - они же закрыты private!?
+            return new ComplexStruct { Re = complex1.re - complex2.re, Im = complex1.im - complex2.im }; // 
         }
 
 

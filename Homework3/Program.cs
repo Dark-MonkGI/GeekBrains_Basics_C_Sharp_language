@@ -26,16 +26,16 @@ namespace Homework3
             Console.WriteLine($"Способ 1: {complex1.Plus(complex2)}");
             Console.WriteLine($"Способ 2: {ComplexStruct.Plus(complex1, complex2)}");
 
-            ComplexStruct complex = complex1 + complex2; //И ТУТ
+            ComplexStruct complex = complex1 + complex2; //
 
-            Console.WriteLine($"Способ 3: {complex}"); //ПОЧЕМУ ОНИ МЕНЯЮТЬСЯ МЕСТАМИ!?
+            Console.WriteLine($"Способ 3: {complex}"); //
             Console.WriteLine($"=======================================\n\r");
 
             Console.WriteLine($"=======================================");
             Console.WriteLine($"Результат вычитания комплексных чисел:");
             Console.WriteLine($"Способ 1: {complex1.Minus(complex2)}");
             Console.WriteLine($"Способ 2: {ComplexStruct.Minus(complex1, complex2)}");
-            Console.WriteLine($"Способ 3: {complex1 - complex2}"); //И ТУТ
+            Console.WriteLine($"Способ 3: {complex1 - complex2}"); //
             Console.WriteLine($"=======================================\n\r");
 
             Console.WriteLine($"Для продолжения введите Enter");
