@@ -10,8 +10,6 @@ namespace Homework4
     internal class MyArray
     {
 
-        //Реализовать конструктор, создающий массив определенного размера и заполняющий массив числами от начального значения с заданным шагом.
-        //Создать свойство Sum, которое возвращает сумму элементов массива,
         //метод Inverse, возвращающий новый массив с измененными знаками у всех элементов массива(старый массив, остается без изменений),
         //метод Multi, умножающий каждый элемент массива на определённое число, свойство MaxCount, возвращающее количество максимальных элементов.
 
@@ -25,6 +23,19 @@ namespace Homework4
             set { array[index] = value; }
         }
 
+        /// <summary>
+        ///  Свойство возвращает сумму элементов массива
+        /// </summary>
+        public int Summ
+        {
+            get 
+            {
+                int summ = 0;
+                for (int i = 0; i < array.Length; i++)
+                    summ += array[i];
+                return summ;
+            }
+        }
 
         public MyArray(int[] array)
         {
@@ -34,7 +45,8 @@ namespace Homework4
         public MyArray(int size)
         {
             Random random = new Random();
-            array = new int[size];
+
+            this.array = new int[size];
 
             for (int i = 0; i < size; i++)
                 array[i] = random.Next(-99, 100);
@@ -43,6 +55,21 @@ namespace Homework4
         public MyArray(string fileName)
         {
             this.array = LoadArrayFromFile(fileName);
+        }
+
+        /// <summary>
+        /// Конструктор, создающий массив с заданным шагом.
+        /// </summary>
+        /// <param name="size">Размер массива</param>
+        /// <param name="step">Шаг заполняемости</param>
+        public MyArray(int size, int step)
+        {
+            this.array = new int[size];
+            for (int i = 0; i < size; i++)
+            {
+                array[i] = step;
+                step += step;
+            }
         }
 
         public void PrintArray()
