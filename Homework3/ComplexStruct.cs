@@ -42,13 +42,11 @@ namespace Homework3
             }
         }
 
-        public ComplexStruct(int im, int re)
+        public ComplexStruct(int re, int im)
         {
             this.im = im;
             this.re = re;
         }
-
-
 
 
 
@@ -57,20 +55,15 @@ namespace Homework3
             int ss = complex1.Re + complex2.Re;// 
             int ss2 = complex1.Im + complex2.Im;
 
-            ComplexStruct complex3 = new ComplexStruct(complex1.Re + complex2.Re, complex1.Im + complex2.Im); // 
+            ComplexStruct complex3 = new ComplexStruct(complex1.Re + complex2.Re, complex1.Im + complex2.Im);
 
 
-            return new ComplexStruct { Re = complex1.Re + complex2.Re, Im = complex1.Im + complex2.Im }; //  
+            return new ComplexStruct { Re = complex1.Re + complex2.Re, Im = complex1.Im + complex2.Im };  
         }
-
-
-
-
-
 
         public static ComplexStruct operator -(ComplexStruct complex1, ComplexStruct complex2)
         {
-            return new ComplexStruct { Re = complex1.re - complex2.re, Im = complex1.im - complex2.im }; // 
+            return new ComplexStruct { Re = complex1.re - complex2.re, Im = complex1.im - complex2.im }; 
         }
 
 
@@ -99,6 +92,5 @@ namespace Homework3
         {
             return $"{re} + {im}i";
         }
-
     }
 }
