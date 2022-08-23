@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SayHello\SayHello.csproj">
+      <Project>{ffbdd763-c5a8-42bf-b874-dbee2a2fd1d0}</Project>
+      <Name>SayHello</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
