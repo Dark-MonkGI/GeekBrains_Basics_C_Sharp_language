@@ -17,7 +17,7 @@ namespace Homework6
             NewClass.Table(NewClass.MyFuncTwo, -2, 2);
 
             Console.WriteLine("Таблица функции Sin:");
-            NewClass.Table(NewClass.MyFuncThree, -2, 2); // Можно передавать уже созданные методы
+            NewClass.Table(NewClass.MyFuncThree, -2, 2);
 
             Console.WriteLine("Таблица функции Sin:");
             NewClass.Table(delegate (double x, double y ) { return y * Math.Sin(x); }, -2, 2);
