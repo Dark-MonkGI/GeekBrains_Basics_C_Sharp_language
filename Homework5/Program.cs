@@ -29,10 +29,10 @@ namespace Homework5
             Console.Clear();
 
             Console.WriteLine("Текст без слов, заканчивающихся на 'о':");
-            checkMyString.PrintWordsWithoutletter('о'); // тут не понял, как он догадался перенос строки там где надо поставить
+            checkMyString.PrintWordsWithoutletter('о'); 
             Console.WriteLine("=======================================");
 
-            Console.WriteLine($"Самое длинное слово: \n\r {checkMyString.LongestWord()}");    
+            Console.WriteLine($"Самое длинное слово: \n\r {checkMyString.LongestWord()}");
             Console.WriteLine("=======================================");
             Console.WriteLine($"Для продолжения введите Enter");
             Console.ReadLine();
