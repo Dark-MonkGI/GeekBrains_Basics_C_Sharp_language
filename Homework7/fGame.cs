@@ -103,7 +103,7 @@ namespace Homework7
             else if (userNumber > computerNumber)
                 GameOver();
 
-            if (countSteps <= 0)
+            if (countSteps <= 0 && userNumber != computerNumber)
                 GameOver();
         }
 

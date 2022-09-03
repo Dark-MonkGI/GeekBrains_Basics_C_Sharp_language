@@ -14,6 +14,7 @@ namespace Homework7
     public partial class fMain : Form
     {
         fSelectGame fSelectGame = new fSelectGame();
+        int tic = 0;
 
         public fMain()
         {
@@ -31,7 +32,6 @@ namespace Homework7
             fSelectGame.ShowDialog();
             this.Show();
             ClosedBye();
-            this.Close();
         }
 
         private void ClosedBye()
@@ -42,7 +42,11 @@ namespace Homework7
             lblLetsPay.Left = 125;
             lblLetsPay.Text = "Ok...Bye! See you...";
             lblLetsPay.Refresh();
-            Thread.Sleep(1000);
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

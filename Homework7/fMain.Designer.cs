@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             this.lblSayHi = new System.Windows.Forms.Label();
             this.lblLetsPay = new System.Windows.Forms.Label();
             this.btnGo = new System.Windows.Forms.Button();
             this.btnNo = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblSayHi
@@ -81,6 +83,11 @@
             this.btnNo.UseVisualStyleBackColor = true;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,5 +115,6 @@
         private System.Windows.Forms.Label lblLetsPay;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Button btnNo;
+        private System.Windows.Forms.Timer timer1;
     }
 }
