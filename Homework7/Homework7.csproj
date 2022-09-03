@@ -46,14 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="fGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="fGame.Designer.cs">
+      <DependentUpon>fGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGuessNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGuessNumber.Designer.cs">
+      <DependentUpon>fGuessNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="fSelectGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSelectGame.Designer.cs">
+      <DependentUpon>fSelectGame.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fGame.resx">
+      <DependentUpon>fGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGuessNumber.resx">
+      <DependentUpon>fGuessNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="fSelectGame.resx">
+      <DependentUpon>fSelectGame.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
