@@ -13,6 +13,7 @@ namespace Homework8
     public partial class fTrueFalseEditor : Form
     {
         TrueFalseEngine engine;
+        int currentValueNud = 1;
 
         public fTrueFalseEditor()
         {
@@ -30,7 +31,7 @@ namespace Homework8
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 engine = new TrueFalseEngine(dlg.FileName);
-                engine.Add("Замля круглая?", true);
+                engine.Add("Земля круглая?", true);
                 engine.Save();
                 nudNumber.Minimum = 1;
                 nudNumber.Maximum = 1;
@@ -40,8 +41,20 @@ namespace Homework8
 
         private void nudNumber_ValueChanged(object sender, EventArgs e)
         {
-            tbQuestion.Text = engine[(int)nudNumber.Value - 1].Text;
-            cbTrue.Checked = engine[(int)nudNumber.Value - 1].TrueFalse;
+
+            if (engine != null)
+            {
+                if(currentValueNud != (int)nudNumber.Value)
+                {
+                    SaveEngine(currentValueNud - 1);
+                    currentValueNud = (int)nudNumber.Value;
+                }
+
+                tbQuestion.Text = engine[(int)nudNumber.Value - 1].Text;
+                cbTrue.Checked = engine[(int)nudNumber.Value - 1].TrueFalse;
+            }
+            else
+                nudNumber.Value = 0;
         }
 
         private void menuItemOpen_Click(object sender, EventArgs e)
@@ -59,27 +72,71 @@ namespace Homework8
 
         private void menuItemSave_Click(object sender, EventArgs e)
         {
-            engine.Save();
+            SaveEngineFile();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            engine.Add($"#{engine.Count + 1}", true);
-            nudNumber.Maximum = engine.Count;
-            nudNumber.Value = engine.Count;
+            if (engine != null)
+            {
+                engine.Add($"#{engine.Count + 1}", true);
+                nudNumber.Maximum = engine.Count;
+                nudNumber.Value = engine.Count;
+            }
+            else
+                MessageBox.Show("Файл не инициализирован\n\r Сперва создайте файл", "TrueFalse Editor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            engine[(int)nudNumber.Value - 1].Text = tbQuestion.Text;
-            engine[(int)nudNumber.Value - 1].TrueFalse = cbTrue.Checked;
+            SaveEngineFile();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            engine.Remove((int)nudNumber.Value - 1);
-            nudNumber.Maximum--;
-            nudNumber.Value--;
+            if (engine != null)
+            {
+                engine.Remove((int)nudNumber.Value - 1);
+                nudNumber.Maximum--;
+                nudNumber.Value--;
+
+                SaveEngineFile();
+            }
+            else
+                MessageBox.Show("Файл не инициализирован\n\r Сперва создайте файл", "TrueFalse Editor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        private void SaveEngine()
+        {
+            if (engine != null)
+            {
+                engine[(int)nudNumber.Value - 1].Text = tbQuestion.Text;
+                engine[(int)nudNumber.Value - 1].TrueFalse = cbTrue.Checked;
+            }
+            else
+                MessageBox.Show("Файл не инициализирован\n\r Сперва создайте файл", "TrueFalse Editor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void SaveEngine(int num)
+        {
+            if (engine != null)
+            {
+                engine[num].Text = tbQuestion.Text;
+                engine[num].TrueFalse = cbTrue.Checked;
+            }
+            else
+                MessageBox.Show("Файл не инициализирован\n\r Сперва создайте файл", "TrueFalse Editor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void SaveEngineFile()
+        {
+            if (engine != null)
+            {
+                SaveEngine();
+
+                engine.Save();
+            }
+            else
+                MessageBox.Show("Файл не инициализирован\n\r Сперва создайте файл", "TrueFalse Editor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Homework8
     /// <summary>
     /// Вопрос
     /// </summary>
-    internal class Question
+    public class Question
     {
         /// <summary>
         /// Текст вопроса
@@ -21,13 +21,19 @@ namespace Homework8
         /// </summary>
         public bool TrueFalse { get; set; }
 
+        /// <summary>
+        /// Конструктор "по умолчанию" 
+        /// </summary>
+        public Question()
+        {
+
+        }
+
         public Question(string text, bool trueFalse)
         {
             Text = text;
             TrueFalse = trueFalse;
         }
-
-        public Question() { }
 
     }
 }

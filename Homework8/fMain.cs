@@ -13,7 +13,6 @@ namespace Homework8
     public partial class fMain : Form
     {
         fTrueFalseEditor fTrueFalseEditor = new fTrueFalseEditor();
-        int tic = 0;
 
         public fMain()
         {
