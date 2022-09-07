@@ -9,7 +9,7 @@ namespace Homework8
     /// <summary>
     /// Вопрос
     /// </summary>
-    public class Question
+    internal class Question
     {
         /// <summary>
         /// Текст вопроса
